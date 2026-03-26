@@ -1,0 +1,13 @@
+name: "Imagenet"
+resolution: 256
+image_root_path: "demo-samples/imagenet"
+start_idx: 0 # Change if subset of data is to be used
+end_idx: -1 # Change if subset of data is to be used
+device: 'cuda'
+valid_extensions:
+  - .jpg
+  - .JPG
+  - .jpeg
+  - .JPEG
+  - .png
+  - .PNG

@@ -1,0 +1,22 @@
+defaults:
+- data: imagenet256
+- inverse_task: down_sampling
+- model: imagenet256ddpm
+- sampler: edm_admm
+
+seed: 99
+gpu: 0
+wandb: False
+name: DiffOps
+eval_fn_list: ['psnr', 'ssim' , 'lpips']
+total_images: 10
+batch_size: 10
+num_runs: 1
+project_name: DiffOps
+
+save_dir: ./results/imagenet
+save_samples: True
+save_traj: False
+save_traj_raw_data: False
+show_eval: True
+show_config: False

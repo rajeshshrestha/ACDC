@@ -1,0 +1,15 @@
+name: "FFHQ"
+resolution: 256
+image_root_path: "./demo-samples/ffhq"
+data_info_path: null # Path to metadata json used to separate train and validation dataset
+start_idx: 0 # Change if subset of data is to be used
+end_idx: -1 # Change if subset of data is to be used
+is_train: False # Whether to use train set or validation set
+device: 'cuda'
+valid_extensions:
+  - .jpg
+  - .JPG
+  - .jpeg
+  - .JPEG
+  - .png
+  - .PNG
