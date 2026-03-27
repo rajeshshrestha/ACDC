@@ -21,6 +21,8 @@ tasks=( down_sampling
     inpainting_rand
     inpainting
     motion_blur
+    phase_retrieval
+    nonlinear_blur
     )
 
 for task in "${tasks[@]}"; do

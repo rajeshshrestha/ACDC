@@ -6,7 +6,7 @@
 ```conda activate acdc```
 
 3. Change directory to extracted project folder   
-```cd [project_folder]/mycode```
+```cd [project_folder]/acdc-inverse```
 
 4. Install requirements   
 ``` pip install -r requirements.txt```

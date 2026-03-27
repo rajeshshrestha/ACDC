@@ -39,6 +39,9 @@ class ADMM(nn.Module):
         self.alphas = 1 - self.betas
         self.alphas_cumprod = np.cumprod(self.alphas, axis=0)
         self.alphas_cumprod_prev = np.append(1.0, self.alphas_cumprod[:-1])
+        
+
+        self.regularizers = None
 
 
     def optimize_ml_with_generic_gd(self, x_k, z_k, u_k, operator, measurement, wandb=False):
@@ -173,14 +176,6 @@ class ADMM(nn.Module):
                 raise Exception(
                     f"Prior type {prior_use_type} not supported!!!")
         
-        '''Generate the residual factor'''
-        residuals = denoised_img - noisy_im
-        ratio = torch.linalg.norm(torch.flatten(residuals[:len(residuals)//2] - residuals[len(residuals)//2:], start_dim=1), dim=1)**2/ torch.norm(torch.flatten(noisy_im[:len(residuals)//2] - noisy_im[len(residuals)//2:], start_dim=1), dim=1)**2
-        mean_ratio, std_ratio, max_ratio = ratio.mean(), ratio.std(), ratio.max()
-        if wandb:
-            wnb.log({'denoise_mean_ratio': mean_ratio.item(),
-                        'denoise_std_ratio': std_ratio.item(),
-                        'denoise_max_ratio': max_ratio.item()})
         return denoised_img
 
     def sample(self, model, ref_img, operator,
