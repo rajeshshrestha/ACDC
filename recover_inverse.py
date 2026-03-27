@@ -41,7 +41,13 @@ def main(args):
 
     '''Get the forward measurement operator'''
     operator = get_operator(**args.inverse_task.operator)
-
+    
+    '''Update the annealing steps with task specific'''
+    if 'annealing_steps' in args.inverse_task.admm_config.denoise:
+        args.sampler.annealing_scheduler_config.num_steps = int(args.inverse_task.admm_config.denoise['annealing_steps'])
+        args.inverse_task.admm_config.max_iter = args.sampler.annealing_scheduler_config.num_steps + 20
+        print(f"Updated annealing_steps: {args.sampler.annealing_scheduler_config}")
+        
     '''Get image from the dataset'''
     total_number = min(args.batch_size, len(dataset))
     dataloader = DataLoader(dataset, batch_size=args.total_images, shuffle=False)

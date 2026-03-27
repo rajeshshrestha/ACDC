@@ -17,7 +17,7 @@ admm_config:
     z: 0.01
     u: 0
   ml:
-    max_iter: 10000
+    max_iter: 1000
     lr: 1.0e-1
     tol: 1.0e-1
     optimizer: Adam
@@ -33,6 +33,7 @@ admm_config:
     t_window_max: 10
     t_window_min: 3
     t_minimum: 20
+    annealing_steps: 400
     lgvd:
       reg_factor: 100
       num_steps: 10
