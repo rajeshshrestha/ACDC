@@ -86,7 +86,7 @@ def main(args):
 
     # log results
     log_results(args, full_trajs, results, images, y,
-                full_samples, markdown_text, args.total_images)
+                full_samples, markdown_text, min(args.total_images, len(dataset)))
     if args.wandb:
         evaluator.log_wandb(results, args.batch_size)
         wandb.finish()

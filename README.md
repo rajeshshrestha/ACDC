@@ -7,8 +7,7 @@ Published as a conference paper at **ICLR 2026**.
 <p align="center">
   <a href="https://openreview.net/forum?id=BiXwSIIMIq">OpenReview</a> |
   <a href="https://openreview.net/pdf?id=BiXwSIIMIq">Paper PDF</a> |
-  <a href="https://arxiv.org/abs/2603.10281">arXiv</a> |
-  <a href="https://openreview.net/attachment?id=BiXwSIIMIq&name=supplementary_material">Supplementary</a>
+  <a href="https://arxiv.org/abs/2603.10281">arXiv</a> 
 </p>
 
 <p align="center">
@@ -125,10 +124,10 @@ Results are written to the configured `save_dir`. Task, model, dataset, and samp
 Table 1 of the paper reports that on **FFHQ**, `Ours-tweedie` reaches **30.439 PSNR** for 4x super-resolution, **32.844 PSNR** for random inpainting, **30.003 PSNR** for motion deblurring, and **27.944 PSNR** for phase retrieval. Across FFHQ and ImageNet, the two AC-DC variants are typically best or second-best in PSNR, SSIM, and LPIPS.
 
 <p align="center">
-  <img src="assets/readme/motion-blur-result.png" alt="motion blur recovery results" width="320">
+  <img src="assets/readme/motion-blur-result.png" alt="motion blur recovery results" width="420">
 </p>
 <p align="center">
-  <img src="assets/readme/inpainting-box-result.png" alt="box inpainting recovery results" width="620">
+  <img src="assets/readme/inpainting-box-result.png" alt="box inpainting recovery results" width="920">
 </p>
 
 For the full quantitative tables, qualitative comparisons, convergence analysis, and additional ablations, see the paper and supplementary material linked above.
