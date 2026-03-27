@@ -1,4 +1,4 @@
-# DiffOps: Taming Score-Based Denoisers in ADMM
+# ACDC: Taming Score-Based Denoisers in ADMM
 
 Official PyTorch implementation of **Taming Score-Based Denoisers in ADMM: A Convergent Plug-and-Play Framework** by Rajesh Shrestha and Xiao Fu.
 
